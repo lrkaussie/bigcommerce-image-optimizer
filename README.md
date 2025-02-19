@@ -7,7 +7,7 @@ This extension automatically compresses and optimizes product images in a BigCom
 ### Frontend (User Dashboard)
 - **Framework:** React.js
 - **State Management:** Redux
-- **UI Components:** Tailwind CSS / Material-UI
+- **UI Components:** Material-UI
 
 ### Backend (API & Image Processing)
 - **Framework:** FastAPI
@@ -37,7 +37,7 @@ BigCommerce Store  →  App Dashboard  →  Image Processing API  →  Storage &
 
 | **Component**            | **Technology**          | **Deployment**            |
 |--------------------------|------------------------|---------------------------|
-| Frontend (Dashboard)     | React.js + Tailwind CSS | Vercel / Netlify          |
+| Frontend (Dashboard)     | React.js | Vercel / Netlify          |
 | Backend (API)            | FastAPI (Python)       | Docker + Kubernetes (AWS / GCP) |
 | Image Processing         | Sharp.js / ImageMagick | Runs inside backend API   |
 | Storage                 | MinIO (S3 alternative)  | Self-hosted / Cloud S3    |
