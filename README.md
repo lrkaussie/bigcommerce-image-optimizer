@@ -1,3 +1,59 @@
+# Bulk Product Image Optimizer for BigCommerce
+
+This extension automatically compresses and optimizes product images in a BigCommerce store to improve page speed and SEO. It integrates with the BigCommerce API, processes images using open-source tools, and replaces them with optimized versions.
+
+## Tech Stack
+
+### Frontend (User Dashboard)
+- **Framework:** React.js
+- **State Management:** Redux
+- **UI Components:** Tailwind CSS / Material-UI
+
+### Backend (API & Image Processing)
+- **Framework:** FastAPI
+- **Image Processing:** Sharp.js (Node.js) or ImageMagick (Python)
+- **Database:** PostgreSQL
+- **Authentication:** OAuth2
+
+### Storage & Deployment
+- **Storage:** MinIO
+- **Server:** Docker + Kubernetes
+- **Cloud Hosting:** AWS, DigitalOcean, or self-hosted
+
+## System Architecture
+
+BigCommerce Store  →  App Dashboard  →  Image Processing API  →  Storage & CDN  →  Updated Images in Store
+
+## Workflow
+
+1. **Authentication & Setup**: The merchant installs the app from the BigCommerce App Marketplace and authenticates using OAuth2.
+2. **Fetch Product Images**: Retrieves all product images via the BigCommerce API and saves the image URLs & metadata in the database.
+3. **Image Optimization**: Downloads images, compresses them, converts to next-gen formats, and resizes based on store settings.
+4. **Upload Optimized Images**: Stores optimized images in MinIO and replaces old images via the BigCommerce API.
+5. **Dashboard & Logs**: Merchants see optimization stats and can revert changes if needed.
+6. **Scheduled Optimization**: A cron job runs periodically to check for new images & optimize them automatically.
+
+## Deployment Plan
+
+| **Component**            | **Technology**          | **Deployment**            |
+|--------------------------|------------------------|---------------------------|
+| Frontend (Dashboard)     | React.js + Tailwind CSS | Vercel / Netlify          |
+| Backend (API)            | FastAPI (Python)       | Docker + Kubernetes (AWS / GCP) |
+| Image Processing         | Sharp.js / ImageMagick | Runs inside backend API   |
+| Storage                 | MinIO (S3 alternative)  | Self-hosted / Cloud S3    |
+| Database                | PostgreSQL             | Hosted on DigitalOcean / AWS RDS |
+| Authentication          | OAuth2 (BigCommerce)   | Handled via backend API   |
+
+## Future Enhancements
+
+- Add AI-based image enhancement using OpenCV
+- Allow merchants to preview optimization before applying
+- Provide detailed analytics on storage savings
+
+---
+
+For more information on Create React App, visit the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
